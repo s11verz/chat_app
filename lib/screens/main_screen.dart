@@ -55,15 +55,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   fontSize: 25,
                                   color: Colors.white),
                               children: [
-                            TextSpan(
-                              text: isSignupScreen ? 'to Yummy chat!' : 'back',
-                              style: TextStyle(
-                                  letterSpacing: 1.0,
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            )
-                          ])),
+                                TextSpan(
+                                  text: isSignupScreen ? 'to Yummy chat!' : 'back',
+                                  style: TextStyle(
+                                      letterSpacing: 1.0,
+                                      fontSize: 25,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ])),
                       SizedBox(
                         height: 5.0,
                       ),
@@ -210,7 +210,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                     key: ValueKey(2),
                                     validator: (value) {
                                       if (value!.isEmpty ||
-                                          value.contains('@')) {
+                                          !value.contains('@')) {
                                         return 'Please enter a valid email address';
                                       }
                                       return null;
