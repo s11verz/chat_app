@@ -210,7 +210,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                     key: ValueKey(2),
                                     validator: (value) {
                                       if (value!.isEmpty ||
-                                          value!.contains('@')) {
+                                          value.contains('@')) {
                                         return 'Please enter a valid email address';
                                       }
                                       return null;
