@@ -9,7 +9,6 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-
   final _authentication = FirebaseAuth.instance;
   User? loggedUser;
 
@@ -20,23 +19,34 @@ class _ChatScreenState extends State<ChatScreen> {
     getCurrentUser();
   }
 
-  void getCurrentUser(){
-    try{
+  void getCurrentUser() {
+    try {
       final user = _authentication.currentUser;
-      if(user!=null){
-        loggedUser=user;
+      if (user != null) {
+        loggedUser = user;
         print(loggedUser!.email);
       }
-    }catch(e){
+    } catch (e) {
       print(e);
     }
-
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Chat Screen'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                _authentication.signOut();
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.exit_to_app_sharp,
+                color: Colors.white,
+              ))
+        ],
       ),
       body: Center(
         child: Text('Chat Screen'),
