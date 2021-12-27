@@ -42,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
             IconButton(
                 onPressed: () {
                   _authentication.signOut();
-                  Navigator.pop(context);
+                  //Navigator.pop(context);
                 },
                 icon: Icon(
                   Icons.exit_to_app_sharp,
