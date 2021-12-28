@@ -7,7 +7,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  var option=FirebaseOptions(
+    appId: '1:448618578101:web:0b650370bb29e29cac3efc',
+    apiKey: 'AIzaSyAgUhHU8wSJgO5MVNy95tMT07NEjzMOfz0',
+    projectId: 'react-native-firebase-testing',
+    messagingSenderId: '448618578101',
+  );
+  await Firebase.initializeApp(
+    options: option
+  );
   runApp(MyApp());
 }
 
